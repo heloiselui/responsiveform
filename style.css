@@ -1,0 +1,341 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Space+Mono&family=Ubuntu:wght@500&display=swap');
+
+
+:root {
+  --cor-preta: #000000;
+  --cor-roxa: #6A097D;
+  --cor-branca: #FFFFFF;
+  --cor-branco-escuro: #F6F1F1;
+  --cor-cinza-escuro: #333333;
+  --cor-cinza-claro: #9d9d9d;
+  --cor-rosa: #C060A1;
+}
+
+/* Define as propriedades a todos os elementos da página.*/
+* {
+  /*Remove a margem externa de todos os lados do elemento.*/
+  margin: 0;
+
+  /* Remove o espaço interno de todos os lados do elemento.*/
+  padding: 0;
+
+  /* O preenchimento e a borda serão incluidos na largura e na altura. */
+  box-sizing: border-box;
+
+  /* Define o tipo da fonte. */
+  font-family: "Ubuntu", sans-serif;
+}
+
+
+body {
+
+  /* Cor do elemento */
+  background-color: var(--cor-preta);
+
+  /* Torna o elemento um flex container, transformando todos os seus elementos internos (filhos) em flext itens. */
+  display: flex;
+
+  /* Alinha os flex itens de acordo com o eixo do container*/
+  align-items: center;
+
+  /* Alinha os itens flex no container de acordo com a direção*/
+  justify-content: center;
+
+  /* Altura mínima do elemento. */
+  /* Unidades de tamanho da tela vh e vw. */
+  min-height: 100vh;
+
+  /* Cor do elemento */
+  background-color: var(--cor-preta);
+
+}
+
+div#parallelogram {
+  /* Cor do elemento */
+  background: var(--cor-roxa);
+
+  /*Define a largura do elemento. */
+  width: 1000px;
+
+  /* Define a altura do elemento. */
+  height: 720px;
+
+  /* Delimita o tamanho máximo do elemento. */
+  max-width: 70vw;
+
+  /* Arredondando cantos. */
+  border-radius: 10px;
+
+  /* Adicionando sombra nos elementos. */
+  box-shadow: 5px 5px 15px;
+
+  /*Modifica a inclinação do elemento em um plano 2D. 
+  Parâmetro: eixo x, eixo y, em graus. */
+  transform: skew(6deg, 3deg);
+
+  /* Posiciona qualquer elemento de acordo com o elemento pai. Deixando de faxer parte do fluxo comum do documento. */
+  position: absolute;
+
+  /*Define a ordem dos elementos quando sobreposto. */
+  z-index: -1;
+
+}
+
+section {
+  display: flex;
+
+  /* Cor do elemento */
+  background: var(--cor-branca);
+
+  /*Gerar espaço ao redor do conteúdo do elemento 30px superior e inferior 5px para a esquerda e direita. */
+  padding: 30px 5px;
+
+  /* Arredonda cantos. */
+  border-radius: 10px;
+
+  /* Adiciona sombra nos elementos */
+  box-shadow: 5px 5px 15px;
+
+  /* Tamanho máximo do elemento */
+  max-width: 70vw;
+
+}
+
+section h1 {
+  padding: 40px 10px;
+  /* Alinha o texto no centro. */
+  text-align: center;
+
+}
+
+fieldset {
+  /* Remove a borda. */
+  border: none;
+}
+
+fieldset:nth-child(2) {
+  /*Vai alinhar os elementos um ao lado do outro. */
+  display: flex;
+
+}
+
+fieldset:nth-child(4) {
+  display: flex;
+
+  /* Adiciona margem na parte superior. */
+  padding-top: 20px;
+
+}
+
+fieldset:nth-child(5) {
+  display: flex;
+  width: 100%;
+}
+
+.container {
+  /* Tipo de método de posicionamento de um elemento (estático, relativo, fixo, absoluto ou aderente)
+	/* Definido como relative, indica que está posicionado em relação à sua posição normal. 
+	Outro conteúdo não será ajustado para caber em qualquer lacuna deixada pelo elemento.*/
+
+  /* relative - indica que esta posicionado
+	   em relação à sua posição normal. */
+  position: relative;
+}
+
+.container input {
+  margin: 10px 10px;
+
+  /* Define a largura do elemento. */
+  width: calc(100% - 20px);
+
+  /* Defina a altura dos elementos. */
+  height: 70px;
+
+  /*Remove a borda. */
+  border: none;
+  background-color: var(--cor-branco-escuro);
+  border-radius: 4px;
+  color: var(--cor-cinza-escuro);
+
+  /*Tamanho da fonte. */
+  font-size: 18px;
+
+  /* Aumenta a largura do contorno do texto.*/
+  font-weight: 700;
+
+  /* Gera espaço ao redor do conteúdo do elemento (superior, direito, inferior e esquerdo) */
+  padding: 14px 10px 0 10px;
+
+}
+
+.container label {
+  /*Transforma o texto deixando todas as letras em maiúsculo. */
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cor-cinza-claro);
+
+  /* Posiciona qualquer elemento de acordo com o elemento pai, deixando de fazer parte do fluxo comum do documento */
+  position: absolute;
+  /* Defina a altura entre linha. */
+  line-height: 70px;
+
+  /* Posição vertical que necessita que o elemento tenha uma posição determinada. */
+  top: 10px;
+
+  /* Distância da borda esquerda. */
+  left: 20px;
+
+  /* Impede a seleção de texto. */
+  user-select: none;
+
+  /* Se o elemento deve agir ou não a eventos do ponteiro. */
+  pointer-events: none;
+
+  /*Altera os valores das propriedades suavemente em um tempo determinado. */
+  transition: 0.5s;
+
+}
+
+/* Quando ocorre o foco no input altere as propriedades do label. */
+.container input:focus~label,
+.container input:valid~label {
+  left: 20px;
+  top: -10px;
+  color: var(--cor-rosa);
+
+}
+
+#check {
+  width: 50%;
+  text-transform: uppercase;
+  font-size: 14px;
+  display: flex;
+  margin-top: 5px;
+}
+
+#check input {
+  width: 25px;
+  height: 25px;
+
+  /* auto - Centraliza o elemento na horizontal. 
+  0 - Não altera a margem esquerda e direita. */
+  margin: auto 0;
+
+  /* Gera espaço ao redor do conteúdo do elemento
+	   (superior, direito, inferior e esquerdo) */
+  /*padding: 14px 60px 0 10px;*/
+}
+
+#check label {
+  margin: auto 10px;
+  color: var(--cor-cinza-escuro);
+  transition: 0.5s;
+
+}
+
+#check input:focus~label,
+#check input:valid~label {
+  color: var(--cor-rosa);
+
+}
+
+button {
+  margin: 40px 0;
+  margin-left: 10px;
+
+  /*Ocupar metade do fieldset descontando a margin de 10px */
+  width: calc(50% - 10px);
+  height: 70px;
+
+  background: var(--cor-roxa);
+  color: var(--cor-branca);
+  font-size: 20px;
+  border: none;
+  border-radius: 20px;
+
+  /*Mudar o ponteiro do mouse. */
+  cursor: pointer;
+  transition: .3s linear;
+}
+
+button:hover {
+  /* Altera a transparência do elemento */
+  opacity: 0.85;
+}
+
+form a {
+  /* Remve a decoração padrão do elemento
+  Na tag a "link" remove o traço inferior; */
+  text-decoration: none;
+  font-size: 16px;
+  color: var(--cor-cinza-escuro);
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: center;
+
+  /*Exibe o elemento em bloco. 
+  Ele começa em uma nova linha e ocupa toda a largura.*/
+  display: block;
+
+}
+
+form a:hover {
+  color: var(--cor-preta);
+
+}
+
+section img {
+  width: 250px;
+  height: 250px;
+
+  /*auto -> Centraliza horizontalmente o elemento em seu container. */
+  margin: auto 40px;
+
+}
+
+@media only screen and (max-width: 1080px) {
+  div#parallelogram {
+    height: 690px;
+  }
+
+  section img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 510px) {
+  div#parallelogram {
+    display: none;
+  }
+
+  section {
+    min-width: 95vw;
+  }
+
+  form {
+    width: 100%;
+  }
+
+}
+
+fieldset:nth-child(2),
+fieldset:nth-child(4),
+fieldset:nth-child(5) {
+  flex-direction: column;
+}
+
+fieldset:nth-child(4) {
+  padding: 0%;
+}
+
+div#check {
+  width: 100%;
+}
+
+button {
+  width: 100%;
+  margin-left: 0;
+}
